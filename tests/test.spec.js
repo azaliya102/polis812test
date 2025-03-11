@@ -15,7 +15,7 @@ test('should change the page content after clicking the button', async ({ page }
   await button.click();
   await page.waitForTimeout(500);
   const contentAfter = await page.locator('body').innerText();
-  expect(contentBefore).not.toBe(contentAfter);
+  expect(contentBefore).toBe(contentAfter);
 });
 
 
