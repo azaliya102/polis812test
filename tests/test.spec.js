@@ -5,7 +5,6 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/vakuu/);
 });
 
-//this test will FAIL because the button changes nothing
 test('should change the page content after clicking the button', async ({ page }) => {
   await page.goto('https://polis812.github.io/vacuu/');
   const button = page.locator('//*[@id="app"]/div[2]/div[6]/div[2]/span[2]');
