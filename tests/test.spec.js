@@ -5,7 +5,7 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/vakuu/);
 });
 
-//this test will fail because the button changes nothing
+//this test will FAIL because the button changes nothing
 test('should change the page content after clicking the button', async ({ page }) => {
   await page.goto('https://polis812.github.io/vacuu/');
   const button = page.locator('//*[@id="app"]/div[2]/div[6]/div[2]/span[2]');
@@ -35,7 +35,7 @@ test('should show the error mesasage after entering a wrong email adress', async
 test('The page text does not change after changing the language', async ({ page }) => {
   await page.goto('https://polis812.github.io/vacuu/');
   const langSelector = page.locator('//*[@id="app"]/div[1]/select');
-  const header = page.locator('h1'); // Укажите селектор заголовка
+  const header = page.locator('h1');
   const initialText = await header.innerText();
   await langSelector.selectOption('fin');
   await page.waitForTimeout(1000);
